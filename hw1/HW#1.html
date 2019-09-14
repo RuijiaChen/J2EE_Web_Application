@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HW#1</title>
+        <style>
+            .title {
+                color:black;
+                font-size:40px;
+                font-family:sans-serif;
+                font-weight:bold;
+            }
+            .row{
+                width: 300px;
+                padding: 5px;
+                margin: 1px;
+                border-width: 0px;
+                background-color: lightpink;    
+            }
+            label {
+                font-size: large;
+                font-family: sans-serif;
+                width: 70px;
+                display: inline-block;
+            }
+            input {
+                font-size: large;
+            }
+
+            button {
+                font-size: x-large;
+            }
+        </style>
+        <script>
+            function add(){
+                var x = document.getElementById("x").value
+                var y = document.getElementById("y").value
+                document.getElementById("ans").value = parseInt(x) + parseInt(y)
+            }
+            function minus(){
+                var x = document.getElementById("x").value
+                var y = document.getElementById("y").value
+                document.getElementById("ans").value = parseInt(x) - parseInt(y)
+            }
+            function multiply(){
+                var x = document.getElementById("x").value
+                var y = document.getElementById("y").value
+                document.getElementById("ans").value = parseInt(x) * parseInt(y)
+            }
+            function divide(){
+                var x = document.getElementById("x").value
+                var y = document.getElementById("y").value
+                if(y == 0){
+                    alert("0 cannot be used as a dividend")
+                }
+                document.getElementById("ans").value = parseInt(x) / parseInt(y)
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="title">
+            Calculator
+        </div>    
+        <div class="row">
+            <label for="x"> X: </label>
+            <input id="x" type="text" >
+        </div>
+        <div class="row">
+            <label for="y"> Y: </label>
+            <input id="y" type="text">
+         </div>
+        <div class="row">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="button" name="button" value="+" onClick="add()" >
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="button" name="button" value="-" onClick="minus()" >
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="button" name="button" value="*" onClick="multiply()" >
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="button" name="button" value="/" onClick="divide()" >
+        </div>
+        <div class="row">
+            <label for="ans"> Answer: </label>
+            <input id="ans" type="text" value="" readonly />
+      </div>
+    </body>
+</html>
+
+
+
